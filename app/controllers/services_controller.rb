@@ -1,18 +1,18 @@
 class ServicesController < ApplicationController
     def index
         services = Service.all
-        render json: ServiceSerializer.new(services, options).serialized_json
+        render json: services
     end
 
     def show
         service = Service.find_by(id: params[:id])
-        render json: ServiceSerializer.new(service, options).serialized_json
+        render json: service
     end
 
     def create 
         service = Service.new(service_params)
         if service.save 
-            render json: ServiceSerializer.new(service).serialized_json
+            render json: service
         else
             render json: { error: service.errors.messages }, status: 422     #unprocessable entity error
         end
@@ -22,7 +22,7 @@ class ServicesController < ApplicationController
     def update 
         service = Service.find_by(id: params[:id])
         if service.update(service_params)
-            render json: ServiceSerializer.new(service, options).serialized_json
+            render json: service
         else
             render json: { error: service.errors.messages }, status: 422
         end
@@ -46,7 +46,7 @@ class ServicesController < ApplicationController
     end
 
 #add options as 2nd argument for index, show, update methods to provide associated data
-    def options
-        @options ||= { include: %i[appointments] }
-    end
+    # def options
+    #     @options ||= { include: %i[appointments] }
+    # end
 end
