@@ -12,6 +12,15 @@ User.create(
     password: "***"
 )
 
+User.create(
+    business_name: "Business #2",
+    first_name: "User #2",
+    last_name: "Jones",
+    address: "123 Street",
+    email: "email@email.com",
+    password: "***"
+)
+
 
 Client.create(first_name: "Client 1", last_name: "Smith")
 Client.create(first_name: "Client 2", last_name: "Smith")
@@ -39,9 +48,9 @@ Appointment.create(
     note: "Client 1's appt"
 )
 
-p Service.all.count
-p Client.all.count
 p User.all.count
+p Client.all.count
+p Service.all.count
 p Appointment.all.count
 
 puts "seeds created"
