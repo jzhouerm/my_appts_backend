@@ -1,6 +1,6 @@
 class UserSerializer < ActiveModel::Serializer
   # include FastJsonapi::ObjectSerializer
-  attributes :id, :business_name, :first_name, :last_name, :address, :email, :password, :appointments
+  attributes :id, :business_name, :first_name, :last_name, :address, :email, :password, :appointments, :clients, :services
   
   # has_many :appointments
   # has_many :services, through: :appointments
@@ -20,6 +20,19 @@ class UserSerializer < ActiveModel::Serializer
       }
     end
   end
+
+  def clients
+    self.object.clients
+  end
+
+  def services
+    self.object.services
+  end
+
+
+
+
+
 
 end
 
