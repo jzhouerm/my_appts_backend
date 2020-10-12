@@ -26,8 +26,17 @@ class UserSerializer < ActiveModel::Serializer
   end
 
   def clients
-    self.object.clients
+    self.object.clients.uniq do |client_obj|
+      {
+        id: client_obj.id,
+        first_name: client_obj.first_name,
+        last_name: client_obj.last_name,
+        phone: client_obj.phone,
+        email: client_obj.email
+      }
+    end
   end
+
 
   def services
     self.object.services
