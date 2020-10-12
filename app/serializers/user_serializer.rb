@@ -16,7 +16,11 @@ class UserSerializer < ActiveModel::Serializer
         start: appt_obj.start,
         end: appt_obj.end,
         note: appt_obj.note,
-        status: appt_obj.status
+        status: appt_obj.status,
+        client_first_name: appt_obj.client.first_name,
+        client_last_name: appt_obj.client.last_name,
+        client_phone: appt_obj.client.phone,
+        client_email: appt_obj.client.email
       }
     end
   end
@@ -28,7 +32,6 @@ class UserSerializer < ActiveModel::Serializer
   def services
     self.object.services
   end
-
 
 
 
