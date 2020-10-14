@@ -1,25 +1,25 @@
 Project.destroy_all
 Client.destroy_all
 Task.destroy_all
-User.destroy_all
+# User.destroy_all
 
-User.create(
-    business_name: "Web Dev Co.",
-    first_name: "Jules",
-    last_name: "Z.",
-    address: "123 Street",
-    email: "email@email.com",
-    password: "***"
-)
+# User.create(
+#     business_name: "Web Dev Co.",
+#     first_name: "Jules",
+#     last_name: "Z.",
+#     address: "123 Street",
+#     email: "email@email.com",
+#     password: "***"
+# )
 
-User.create(
-    business_name: "Web Dev Co. #2",
-    first_name: "Amy",
-    last_name: "Jones",
-    address: "123 Street",
-    email: "email2@email.com",
-    password: "***"
-)
+# User.create(
+#     business_name: "Web Dev Co. #2",
+#     first_name: "Amy",
+#     last_name: "Jones",
+#     address: "123 Street",
+#     email: "email2@email.com",
+#     password: "***"
+# )
 
 
 Client.create(first_name: "Amy", last_name: "Smith", phone: "917-555-1234", email: "client1@email.com")
