@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   
   resources :users
   resources :clients
-  resources :services
-  resources :appointments
+  resources :tasks
+  resources :projects
 
 end

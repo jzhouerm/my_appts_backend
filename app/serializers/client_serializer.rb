@@ -1,20 +1,22 @@
 class ClientSerializer < ActiveModel::Serializer
   # include FastJsonapi::ObjectSerializer
-  attributes :id, :first_name, :last_name, :phone, :email, :appointments
+  attributes :id, :first_name, :last_name, :phone, :email, :projects
 
-  # has_many :appointments
+  # has_many :projects
 
-  def appointments 
-    self.object.appointments.map do |appt_obj|
+  def projects
+    self.object.projects.map do |project_obj|
       {
-        id: appt_obj.id,
-        user_id: appt_obj.user_id,
-        service_id: appt_obj.service_id,
-        client_id: appt_obj.client_id,
-        start: appt_obj.start,
-        end: appt_obj.end,
-        note: appt_obj.note,
-        status: appt_obj.status
+        id: project_obj.id,
+        user_id: project_obj.user_id,
+        client_id: project_obj.client_id,
+        name: project_obj.name,
+        description: project_obj.description,
+        amount: project_obj.amount,
+        paid: project_obj.paid,
+        start: project_obj.start,
+        end: project_obj.end,
+        status: project_obj.status
       }
     end
   end
