@@ -52,7 +52,6 @@ class UserSerializer < ActiveModel::Serializer
         client_phone: project.client.phone,
         client_email: project.client.email,
         tasks: []}
-        # byebug
         if project.tasks.length > 0
           project.tasks.each do |task|
               task_obj = { 
