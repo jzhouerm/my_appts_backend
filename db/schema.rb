@@ -15,31 +15,35 @@ ActiveRecord::Schema.define(version: 2020_10_07_233547) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "appointments", force: :cascade do |t|
+  create_table "clients", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "phone"
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "service_id"
     t.integer "client_id"
+    t.string "name"
+    t.string "description", default: "N/A"
+    t.integer "amount", default: 0
+    t.integer "paid", default: 0
     t.string "start"
     t.string "end"
-    t.text "note", default: ""
     t.boolean "status", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "clients", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "phone", default: "Not provided"
-    t.string "email", default: "Not provided"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "services", force: :cascade do |t|
-    t.string "name"
-    t.string "description", default: "N/A"
-    t.integer "amount", default: 0
+  create_table "tasks", force: :cascade do |t|
+    t.integer "project_id"
+    t.string "start"
+    t.string "end"
+    t.text "note", default: ""
+    t.boolean "status", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

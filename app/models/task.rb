@@ -1,8 +1,8 @@
-class Service < ApplicationRecord
+class Task < ApplicationRecord
 
     # attr_accessor :id, :name, :description, :amount
     #THE LINE ABOVE RETURN ATTRIBUTES RETURN WITH NIL VALUE
 
-    has_many :appointments
+    belongs_to :project
 
 end
