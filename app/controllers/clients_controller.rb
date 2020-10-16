@@ -1,5 +1,7 @@
 class ClientsController < ApplicationController
 
+    # before_destroy :destroy_tasks
+
     def index
         clients = Client.all
         render json: clients
@@ -30,8 +32,10 @@ class ClientsController < ApplicationController
         
     end
 
+    
     def destroy
         client = Client.find_by(id: params[:id])
+        client.tasks.destroy_all
         if client.destroy
             head :no_content
         else
@@ -39,8 +43,12 @@ class ClientsController < ApplicationController
         end
         
     end
-
+    
     private
+
+    # def destroy_tasks
+    #     self.tasks.destroy_all
+    # end
 
     def client_params
         params.require(:client).permit(:first_name, :last_name, :phone, :email)

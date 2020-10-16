@@ -5,7 +5,6 @@ class UserSerializer < ActiveModel::Serializer
   # has_many :appointments
   # has_many :services, through: :appointments
 
-
   # def projects
   #   self.object.projects.map do |project_obj|
   #     {
@@ -36,6 +35,8 @@ class UserSerializer < ActiveModel::Serializer
   self.object.projects.map do |project|
   # attribute :projects do |user|
     # user.projects.each do |project|
+# byebug
+
       project_obj = { 
         id: project.id,
         user_id: project.user_id,
