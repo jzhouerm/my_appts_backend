@@ -21,7 +21,8 @@ class TasksController < ApplicationController
 
     def update 
         task = Task.find_by(id: params[:id])
-        if Task.update(task_params)
+        # binding.pry
+        if task.update(task_params)
             render json: task
         else
             render json: { error: task.errors.messages }, status: 422
