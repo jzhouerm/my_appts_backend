@@ -11,8 +11,12 @@ class TasksController < ApplicationController
 
     def create 
         task = Task.new(task_params)
+
         if task.save 
-            render json: task
+            # binding.pry
+            project = Project.find(task.project_id)
+            user = User.find(project.user_id)
+            render json: user
         else
             render json: { error: task.errors.messages }, status: 422     #unprocessable entity error
         end
@@ -21,9 +25,11 @@ class TasksController < ApplicationController
 
     def update 
         task = Task.find_by(id: params[:id])
+        project = Project.find(task.project_id)
+        user = User.find(project.user_id)
         # binding.pry
         if task.update(task_params)
-            render json: task
+            render json: user
         else
             render json: { error: task.errors.messages }, status: 422
         end
@@ -32,8 +38,11 @@ class TasksController < ApplicationController
 
     def destroy
         task = Task.find_by(id: params[:id])
+        project = Project.find(task.project_id)
+        user = User.find(project.user_id)
         if task.destroy
-            head :no_content
+            render json: user
+            # head :no_content
         else
             render json: { error: task.errors.messages }, status: 422 
         end
