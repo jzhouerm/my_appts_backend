@@ -15,9 +15,13 @@ class ProjectsController < ApplicationController
 
     def create
         project = Project.new(project_params)
-
-        if project.save 
-            render json: project
+        project.user_id = Project.last.user_id if params["user_id"] == nil
+        project.save!
+        if project
+            
+            # binding.pry
+            user = User.find(project.user_id)
+            render json: user
         else 
             render json: { error: project.errors.messages }, status: 422
         end
