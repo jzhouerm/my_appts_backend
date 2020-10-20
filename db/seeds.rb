@@ -41,20 +41,41 @@ Client.create(first_name: "Mitchell", last_name: "Smith", phone: "917-555-1245",
 # Client.create(first_name: "Quinn", last_name: "Smith", phone: "917-555-1249", email: "client17@email.com")
 # Client.create(first_name: "Richard", last_name: "Smith", phone: "917-555-1250", email: "client18@email.com")
 
-10.times do
-Project.create(user_id: User.first.id, client_id: Client.all.sample.id, name: "Project: Web to Mobile App Conversion", description: "Project description", amount: 5000, paid: 0, start: "2020-10-10T18:00:00", end: "2020-10-31T19:00:00")
-Project.create(user_id: User.first.id, client_id: Client.all.sample.id, name: "Project: Video Editting", description: "Project description", amount: 1000, paid: 0, start: "2020-10-10T18:00:00", end: "2020-10-31T19:00:00")
-Project.create(user_id: User.first.id, client_id: Client.all.sample.id, name: "Project: Web Development Project", description: "Project description", amount: 1000, paid: 0, start: "2020-10-12T18:00:00", end: "2020-10-31T19:00:00")
-end
+# 10.times do
+Project.create(user_id: User.first.id, client_id: Client.first.id, name: "Web to Mobile App Conversion", description: "Project description", amount: 5000, paid: 5000, start: "2020-10-01T18:00:00", end: "2020-10-19T19:00:00", status: true)
+Project.create(user_id: User.first.id, client_id: Client.second.id, name: "React Native App for fashion marketplace", description: "Project description", amount: 1000, paid: 0, start: "2020-10-12T18:00:00", end: "2020-10-23T19:00:00")
+Project.create(user_id: User.first.id, client_id: Client.third.id, name: "Mobile App Interface Updates", description: "Project description", amount: 1000, paid: 0, start: "2020-10-18T18:00:00", end: "2020-11-11T19:00:00")
+Project.create(user_id: User.first.id, client_id: Client.fourth.id, name: "React + Wordpress + API Integration", description: "Project description", amount: 1000, paid: 0, start: "2020-10-20T18:00:00", end: "2020-11-21T19:00:00")
+Project.create(user_id: User.first.id, client_id: Client.fifth.id, name: "Front-End Development for E-Commerce Site", description: "Project description", amount: 1000, paid: 0, start: "2020-10-15T18:00:00", end: "2020-11-30T19:00:00")
 
-20.times do
+# end
+
+# 1.times do
 Task.create(
-    project_id: Project.all.sample.id,
-    start: "2020-10-13T18:00:00",
-    end: "2020-10-13T19:00:00",
-    note: "Phase 1: A note for the client's appointment"
+    project_id: Project.first.id,
+    start: "2020-10-18T09:00:00",
+    end: "2020-10-18T15:00:00",
+    note: "Phase 1: A note for the client's project."
 )
-end
+Task.create(
+    project_id: Project.second.id,
+    start: "2020-10-22T10:00:00",
+    end: "2020-10-22T16:00:00",
+    note: "Phase 1: A note for the client's project."
+)
+Task.create(
+    project_id: Project.third.id,
+    start: "2020-10-19T12:00:00",
+    end: "2020-10-19T16:00:00",
+    note: "Phase 1: A note for the client's project."
+)
+Task.create(
+    project_id: Project.fourth.id,
+    start: "2020-10-20T09:00:00",
+    end: "2020-10-20T14:00:00",
+    note: "Phase 1: A note for the client's project."
+)
+# end
 
 p User.all.count
 p Client.all.count

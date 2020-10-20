@@ -30,8 +30,10 @@ class ProjectsController < ApplicationController
 
     def update 
         project = Project.find_by(id: params[:id])
+        # project.user_id = Project.last.user_id if params["user_id"] == nil
         if project.update(project_params)
-            render json: project
+            user = User.find(project.user_id)
+            render json: user
         else
             render json: { error: project.errors.messages }, status: 422
         end
