@@ -42,10 +42,10 @@ Client.create(first_name: "Mitchell", last_name: "Smith", phone: "917-555-1245",
 # Client.create(first_name: "Richard", last_name: "Smith", phone: "917-555-1250", email: "client18@email.com")
 
 # 10.times do
-Project.create(user_id: User.first.id, client_id: Client.first.id, name: "Web to Mobile App Conversion", description: "Project description", amount: 5000, paid: 5000, start: "2020-10-01T18:00:00", end: "2020-10-19T19:00:00", status: true)
-Project.create(user_id: User.first.id, client_id: Client.second.id, name: "React Native App for fashion marketplace", description: "Project description", amount: 1000, paid: 0, start: "2020-10-12T18:00:00", end: "2020-10-23T19:00:00")
-Project.create(user_id: User.first.id, client_id: Client.third.id, name: "Mobile App Interface Updates", description: "Project description", amount: 1000, paid: 0, start: "2020-10-18T18:00:00", end: "2020-11-11T19:00:00")
-Project.create(user_id: User.first.id, client_id: Client.fourth.id, name: "React + Wordpress + API Integration", description: "Project description", amount: 1000, paid: 0, start: "2020-10-20T18:00:00", end: "2020-11-21T19:00:00")
+Project.create(user_id: User.first.id, client_id: Client.first.id, name: "Web to Mobile App Conversion", description: "Project description", amount: 5000, paid: 5000, start: "2020-10-13T09:00:00", end: "2020-10-19T19:00:00", status: true)
+Project.create(user_id: User.first.id, client_id: Client.second.id, name: "React Native App for fashion marketplace", description: "Project description", amount: 1000, paid: 0, start: "2020-10-16T12:00:00", end: "2020-10-23T19:00:00")
+Project.create(user_id: User.first.id, client_id: Client.third.id, name: "Mobile App Interface Updates", description: "Project description", amount: 1000, paid: 0, start: "2020-10-18T12:00:00", end: "2020-11-11T19:00:00")
+Project.create(user_id: User.first.id, client_id: Client.fourth.id, name: "React + Wordpress + API Integration", description: "Project description", amount: 1000, paid: 0, start: "2020-10-21T09:00:00", end: "2020-11-21T19:00:00")
 Project.create(user_id: User.first.id, client_id: Client.fifth.id, name: "Front-End Development for E-Commerce Site", description: "Project description", amount: 1000, paid: 0, start: "2020-10-15T18:00:00", end: "2020-11-30T19:00:00")
 
 # end
@@ -53,27 +53,106 @@ Project.create(user_id: User.first.id, client_id: Client.fifth.id, name: "Front-
 # 1.times do
 Task.create(
     project_id: Project.first.id,
-    start: "2020-10-18T09:00:00",
-    end: "2020-10-18T15:00:00",
-    note: "Phase 1: A note for the client's project."
+    start: "2020-10-13T09:00:00",
+    end: "2020-10-13T15:00:00",
+    note: "Phase 1: A note for the client's project.",
+    status: true
+
+)
+Task.create(
+    project_id: Project.first.id,
+    start: "2020-10-14T09:00:00",
+    end: "2020-10-14T15:00:00",
+    note: "Phase 2: A note for the client's project.",
+    status: true
+)
+
+Task.create(
+    project_id: Project.first.id,
+    start: "2020-10-15T10:00:00",
+    end: "2020-10-15T16:00:00",
+    note: "Phase 1: A note for the client's project.",
+    status: true
+)
+# GRAPH STOPS HERE...WHY?
+Task.create(
+    project_id: Project.second.id,
+    start: "2020-10-16T12:00:00",
+    end: "2020-10-16T16:00:00",
+    note: "Phase 1: A note for the client's project.",
+    status: true
+
 )
 Task.create(
     project_id: Project.second.id,
-    start: "2020-10-22T10:00:00",
-    end: "2020-10-22T16:00:00",
-    note: "Phase 1: A note for the client's project."
+    start: "2020-10-17T12:00:00",
+    end: "2020-10-17T16:00:00",
+    note: "Phase 1: A note for the client's project.",
+    status: true
+
 )
+
+Task.create(
+    project_id: Project.third.id,
+    start: "2020-10-18T12:00:00",
+    end: "2020-10-18T16:00:00",
+    note: "Phase 1: A note for the client's project.",
+    status: true
+)
+
 Task.create(
     project_id: Project.third.id,
     start: "2020-10-19T12:00:00",
     end: "2020-10-19T16:00:00",
-    note: "Phase 1: A note for the client's project."
+    note: "Phase 1: A note for the client's project.",
+    status: true
 )
+
+
 Task.create(
     project_id: Project.fourth.id,
     start: "2020-10-20T09:00:00",
     end: "2020-10-20T14:00:00",
-    note: "Phase 1: A note for the client's project."
+    note: "Phase 1: A note for the client's project.",
+    status: false
+)
+
+Task.create(
+    project_id: Project.fourth.id,
+    start: "2020-10-21T09:00:00",
+    end: "2020-10-21T14:00:00",
+    note: "Phase 1: A note for the client's project.",
+    status: false
+)
+# Additional seeds
+Task.create(
+    project_id: Project.first.id,
+    start: "2020-10-22T09:00:00",
+    end: "2020-10-22T15:00:00",
+    note: "Phase 2: A note for the client's project.",
+    status: false
+)
+
+Task.create(
+    project_id: Project.second.id,
+    start: "2020-10-23T10:00:00",
+    end: "2020-10-23T16:00:00",
+    note: "Phase 2: A note for the client's project.",
+    status: false
+)
+Task.create(
+    project_id: Project.third.id,
+    start: "2020-10-24T12:00:00",
+    end: "2020-10-24T16:00:00",
+    note: "Phase 2: A note for the client's project.",
+    status: false
+)
+Task.create(
+    project_id: Project.fourth.id,
+    start: "2020-10-25T09:00:00",
+    end: "2020-10-25T14:00:00",
+    note: "Phase 2: A note for the client's project.",
+    status: false
 )
 # end
 
