@@ -41,12 +41,13 @@ class ProjectsController < ApplicationController
     end
 
     def destroy
-        # binding.pry
         project = Project.find(params[:id])
-        if project
 
+        if project
+            user = User.find(project.user_id)
             project.destroy
-            head :no_content
+            render json: user
+
         else 
             render json: { error: project.errors.messages }, status: 422
         end
