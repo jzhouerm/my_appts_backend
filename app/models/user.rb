@@ -7,5 +7,10 @@ class User < ApplicationRecord
     has_many :tasks, through: :projects
     has_many :clients, through: :projects
 
+    # def p_sorted
+    #     Project.all.select{ |p| p.user_id == self.id }.sort_by{ |p| -p.id}
+    # end
+
+
 end
 
