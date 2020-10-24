@@ -52,6 +52,7 @@ Project.create(user_id: User.first.id, client_id: Client.fifth.id, name: "Front-
 # end
 
 # 1.times do
+# "Web to Mobile App Conversion"
 Task.create(
     project_id: Project.first.id,
     start: "2020-10-14T09:00:00",
@@ -75,7 +76,8 @@ Task.create(
     note: "Phase 3: A note for the client's project.",
     status: true
 )
-# GRAPH STOPS HERE...WHY?
+
+# "React Native App for fashion marketplace"
 Task.create(
     project_id: Project.second.id,
     start: "2020-10-17T12:00:00",
@@ -92,7 +94,7 @@ Task.create(
     status: true
 
 )
-
+# "Mobile App Interface Updates"
 Task.create(
     project_id: Project.third.id,
     start: "2020-10-18T11:00:00",
@@ -109,7 +111,7 @@ Task.create(
     status: true
 )
 
-
+# "React + Wordpress + API Integration"
 Task.create(
     project_id: Project.fourth.id,
     start: "2020-10-20T09:00:00",
@@ -120,8 +122,8 @@ Task.create(
 
 Task.create(
     project_id: Project.fourth.id,
-    start: "2020-10-21T09:00:00",
-    end: "2020-10-21T14:00:00",
+    start: "2020-10-18T08:00:00",
+    end: "2020-10-18T09:00:00",
     note: "Phase 2: Send client the prototype.",
     status: true
 )
@@ -143,15 +145,15 @@ Task.create(
 )
 Task.create(
     project_id: Project.third.id,
-    start: "2020-10-24T12:00:00",
-    end: "2020-10-24T16:00:00",
+    start: "2020-10-20T08:00:00",
+    end: "2020-10-20T09:00:00",
     note: "Bug fixes and revisions.",
     status: false
 )
 Task.create(
     project_id: Project.fourth.id,
-    start: "2020-10-25T09:00:00",
-    end: "2020-10-25T15:00:00",
+    start: "2020-10-19T08:00:00",
+    end: "2020-10-19T09:00:00",
     note: "Bug fixes and revisions.",
     status: false
 )
