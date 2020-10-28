@@ -23,7 +23,7 @@ Task.destroy_all
 
 
 Client.create(first_name: "Amy", last_name: "Walsh", phone: "917-555-1234", email: "awalsh@gmail.com")
-Client.create(first_name: "Benjamin", last_name: "Horowitz", phone: "646-555-1234", email: "hrowitz622@gmail.com")
+Client.create(first_name: "Benjamin", last_name: "Horowitz", phone: "646-555-1234", email: "horowitz622@gmail.com")
 Client.create(first_name: "Chris", last_name: "Dwyer", phone: "917-555-1235", email: "chris463@gmail.com")
 Client.create(first_name: "David", last_name: "Reyes", phone: "917-555-1236", email: "davidr56@gmail.com")
 Client.create(first_name: "Eric", last_name: "Adler", phone: "917-555-1237", email: "eadler89@gmail.com")
