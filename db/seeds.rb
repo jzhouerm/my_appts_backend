@@ -43,16 +43,16 @@ Client.create(first_name: "Michelle", last_name: "D'Onofrio", phone: "917-555-12
 
 # 10.times do
 
-Project.create(user_id: User.first.id, client_id: 1, name: "Web to Mobile App Conversion", description: "Web development project for client using React Native.", amount: 5000, paid: 5000, start: "2020-10-01T09:00:00", end: "2020-10-31T19:00:00", status: true)
-Project.create(user_id: User.first.id, client_id: 2, name: "React Native App for fashion marketplace", description: "Web development project for client using React Native.", amount: 6500, paid: 6500, start: "2020-10-02T12:00:00", end: "2020-10-31T19:00:00")
-Project.create(user_id: User.first.id, client_id: 3, name: "Mobile App Interface Updates", description: "Web development project for client.", amount: 1000, paid: 1000, start: "2020-10-03T12:00:00", end: "2020-10-31T19:00:00")
-Project.create(user_id: User.first.id, client_id: 4, name: "React + Wordpress + API Integration", description: "Web development project for client.", amount: 1000, paid: 1000, start: "2020-10-04T09:00:00", end: "2020-10-31T19:00:00")
-Project.create(user_id: User.first.id, client_id: 5, name: "Front-End Development for E-Commerce Site", description: "Web development project for client.", amount: 1000, paid: 0, start: "2020-10-05T18:00:00", end: "2020-10-31T19:00:00")
+Project.create(user_id: User.first.id, client_id: 1, name: "Web to Mobile App Conversion", description: "Web development project for client using React Native.", amount: 5000, paid: 5000, start: "2020-10-01T09:00:00", end: "2020-10-31T19:00:00", status: false)
+Project.create(user_id: User.first.id, client_id: 2, name: "React Native App for fashion marketplace", description: "Web development project for client using React Native.", amount: 6500, paid: 6500, start: "2020-10-02T12:00:00", end: "2020-10-31T19:00:00", status: true)
+Project.create(user_id: User.first.id, client_id: 3, name: "Mobile App Interface Updates", description: "Web development project for client.", amount: 1000, paid: 1000, start: "2020-10-03T12:00:00", end: "2020-10-31T19:00:00", status: true)
+Project.create(user_id: User.first.id, client_id: 4, name: "React + Wordpress + API Integration", description: "Web development project for client.", amount: 1000, paid: 1000, start: "2020-10-04T09:00:00", end: "2020-10-31T19:00:00", status: true)
+Project.create(user_id: User.first.id, client_id: 5, name: "Front-End Development for E-Commerce Site", description: "Web development project for client.", amount: 1000, paid: 0, start: "2020-10-05T18:00:00", end: "2020-10-31T19:00:00", status: true)
 Project.create(user_id: User.first.id, client_id: 6, name: "Web to Mobile App Conversion", description: "Web development project for client using React Native.", amount: 5000, paid: 5000, start: "2020-10-01T09:00:00", end: "2020-10-31T19:00:00", status: true)
-Project.create(user_id: User.first.id, client_id: 7, name: "React Native App for fashion marketplace", description: "Web development project for client using React Native.", amount: 6500, paid: 6500, start: "2020-10-02T12:00:00", end: "2020-10-31T19:00:00")
-Project.create(user_id: User.first.id, client_id: 8, name: "Mobile App Interface Updates", description: "Web development project for client.", amount: 1000, paid: 1000, start: "2020-10-03T12:00:00", end: "2020-10-31T19:00:00")
-Project.create(user_id: User.first.id, client_id: 9, name: "React + Wordpress + API Integration", description: "Web development project for client.", amount: 1000, paid: 1000, start: "2020-10-04T09:00:00", end: "2020-10-31T19:00:00")
-Project.create(user_id: User.first.id, client_id: 10, name: "Front-End Development for E-Commerce Site", description: "Web development project for client.", amount: 1000, paid: 0, start: "2020-10-05T18:00:00", end: "2020-10-31T19:00:00")
+Project.create(user_id: User.first.id, client_id: 7, name: "React Native App for fashion marketplace", description: "Web development project for client using React Native.", amount: 6500, paid: 6500, start: "2020-10-02T12:00:00", end: "2020-10-31T19:00:00", status: true)
+Project.create(user_id: User.first.id, client_id: 8, name: "Mobile App Interface Updates", description: "Web development project for client.", amount: 1000, paid: 1000, start: "2020-10-03T12:00:00", end: "2020-10-31T19:00:00", status: true)
+Project.create(user_id: User.first.id, client_id: 9, name: "React + Wordpress + API Integration", description: "Web development project for client.", amount: 1000, paid: 1000, start: "2020-10-04T09:00:00", end: "2020-10-31T19:00:00", status: true)
+Project.create(user_id: User.first.id, client_id: 10, name: "Front-End Development for E-Commerce Site", description: "Web development project for client.", amount: 1000, paid: 0, start: "2020-10-05T18:00:00", end: "2020-10-31T19:00:00", status: true)
 
 # end
 
@@ -168,8 +168,8 @@ Task.create(
 # "React + Wordpress + API Integration"
 Task.create(
     project_id: 4,
-    start: "2020-10-27T09:00:00",
-    end: "2020-10-27T13:00:00",
+    start: "2020-10-21T09:00:00",
+    end: "2020-10-21T13:00:00",
     note: "Phase 1: Set up wireframes and backend for client's app.",
     status: true
 )
@@ -184,8 +184,8 @@ Task.create(
 # Additional seeds
 Task.create(
     project_id: 1,
-    start: "2020-10-29T09:00:00",
-    end: "2020-10-29T15:00:00",
+    start: "2020-10-27T09:00:00",
+    end: "2020-10-27T15:00:00",
     note: "Bug fixes and revisions.",
     status: true
 )
@@ -199,8 +199,8 @@ Task.create(
 )
 Task.create(
     project_id: 3,
-    start: "2020-10-27T08:00:00",
-    end: "2020-10-27T09:00:00",
+    start: "2020-10-24T08:00:00",
+    end: "2020-10-24T09:00:00",
     note: "Bug fixes and revisions.",
     status: true
 )
